@@ -8,4 +8,10 @@
         android:id="@+id/events_list_recyclerview"
         />
 
+    <ProgressBar
+        android:id="@+id/events_list_progressbar"
+        android:layout_width="@dimen/abc_action_bar_progress_bar_size"
+        android:layout_height="@dimen/abc_action_bar_progress_bar_size"
+        android:layout_centerInParent="true"/>
+
 </RelativeLayout>
