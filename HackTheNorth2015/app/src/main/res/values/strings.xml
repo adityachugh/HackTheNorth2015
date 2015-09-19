@@ -16,5 +16,7 @@
     <string name="amount_guests">No Guests</string>
     <string name="image">Image</string>
     <string name="image_selected">No Image</string>
+    <string name="title_activity_search_location">SearchLocationActivity</string>
+    <string name="title_activity_view_event">ViewEventActivity</string>
 
 </resources>

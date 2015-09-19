@@ -8,4 +8,5 @@
         android:id="@+id/events_list_recyclerview"
         />
 
+
 </RelativeLayout>

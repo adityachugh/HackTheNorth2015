@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="16dp"/>
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#FFFFFF"
@@ -24,20 +24,21 @@
             android:paddingTop="8dp">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/event_title"
                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
 
             <EditText
+                android:gravity="right"
                 android:id="@+id/event_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
                 android:background="#FFFFFF"
                 android:hint="@string/event_title_hint"/>
 
-        </RelativeLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

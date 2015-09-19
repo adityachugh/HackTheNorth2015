@@ -2,12 +2,13 @@ package htn.aka.hackthenorth2015;
 
 import com.parse.ParseObject;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by Kenny on 2015-09-19.
  */
-public class Event {
+public class Event implements Serializable {
     private String mTitle;
     private String mSubtitle;
     private String mImageUrl;
@@ -32,7 +33,7 @@ public class Event {
     }
 
     private String getSubtitleOfEvent(Date start, Date end) {
-        //TODO: formatstrings
+        //TODO: format strings
         return start.getHours()+" to "+end.getHours();
     }
 
@@ -54,6 +55,10 @@ public class Event {
 
     public Date getEndDate() {
         return mEndDate;
+    }
+
+    public String getLocation() {
+        return "Fake Location";
     }
 
 }

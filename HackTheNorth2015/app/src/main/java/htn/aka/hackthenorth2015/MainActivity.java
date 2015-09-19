@@ -1,11 +1,16 @@
 package htn.aka.hackthenorth2015;
 
+import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.TranslateAnimation;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -36,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
         //Initialize and set the adapter
         mEventsAdapter = new EventsAdapter(this, events);
         recyclerView.setAdapter(mEventsAdapter);
+
+        //animation!
+        TranslateAnimation trans = new TranslateAnimation(0, 0, 1000, 0);
+        trans.setDuration(500);
+        trans.setInterpolator(new DecelerateInterpolator(1.0f));
+        recyclerView.startAnimation(trans);
     }
 
     @Override
