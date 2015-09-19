@@ -17,6 +17,8 @@ import java.util.Date;
 
 public class NewEventActivity extends AppCompatActivity {
 
+    public final static int NEW_EVENT_CODE = 1337;
+
     private Calendar mStartCal;
     private TextView mStartDateView;
     private Date mStartDate;
@@ -117,13 +119,16 @@ public class NewEventActivity extends AppCompatActivity {
             }
         });
 
-        //TODO: pass all of the data to create a new event
         confirmFAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String title = mNameView.getText().toString();
 
-
+                //TODO: pass all of the data to create a new event
+                //TODO: send to parse
+                //TODO: if successful, finish activity to add to event
+                setResult(RESULT_OK);
+                finishActivity(NEW_EVENT_CODE);
                 
             }
         });

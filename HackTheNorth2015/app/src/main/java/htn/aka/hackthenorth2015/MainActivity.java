@@ -1,5 +1,6 @@
 package htn.aka.hackthenorth2015;
 
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -67,7 +68,9 @@ public class MainActivity extends AppCompatActivity {
                     newEventFab.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            //TODO: move to new event activity
+                            //move to new event activity
+                            Intent i = new Intent(MainActivity.this, NewEventActivity.class);
+                            startActivityForResult(i, NewEventActivity.NEW_EVENT_CODE);
                         }
                     });
 
@@ -83,6 +86,15 @@ public class MainActivity extends AppCompatActivity {
 //        events.add(new Event("Test 4", "Oct. 9th - Nov. 10th", new Date(), new Date(), ""));
 //        events.add(new Event("Test 5", "Oct. 9th - Nov. 10th", new Date(), new Date(), ""));
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK){
+            if (requestCode == NewEventActivity.NEW_EVENT_CODE){
+                //TODO: add event to event list!
+            }
+        }
     }
 
     @Override
