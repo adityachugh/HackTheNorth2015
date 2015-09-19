@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         //below is fake data
         List<Event> events = new ArrayList<>();
         events.add(new Event("Test 1", "Oct. 9th - Nov. 10th", new Date(), new Date(), ""));
-        events.add(new Event("Test 2", "Oct. 9th - Nov. 10th", new Date(), new Date(), "https://s3.amazonaws.com/storage.production.ticketacular.me/wallpaper/background/12633University-Waterloo-Engineering-5-2.jpg"));
+        events.add(new Event("Test 2", "Oct. 9th - Nov. 10th", new Date(), new Date(), ""));
         events.add(new Event("Test 3", "Oct. 9th - Nov. 10th", new Date(), new Date(), ""));
         events.add(new Event("Test 4", "Oct. 9th - Nov. 10th", new Date(), new Date(), ""));
         events.add(new Event("Test 5", "Oct. 9th - Nov. 10th", new Date(), new Date(), ""));

@@ -6,20 +6,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Text;
 
 import java.io.Serializable;
 import java.util.List;
 
 /**
- * Created by rohitsharma on 2015-09-19.
+ * Created by akshaypall on 2015-09-19.
  */
-public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder> implements Serializable {
+public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder>{
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private final TextView mTitle;
@@ -50,8 +47,9 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
         Event event = mEvents.get(i);
         viewHolder.mTitle.setText(event.getTitle());
         viewHolder.mSubtitle.setText(event.getSubtitle());
-        if (event.getImageUrl() != null && !event.getImageUrl().equals(""))
-            Picasso.with(mContext).load(event.getImageUrl()).centerCrop().resizeDimen(500, 100).skipMemoryCache().into(viewHolder.mImage);
+        if (event.getImageUrl() != null && !event.getImageUrl().equals("")) {
+            Picasso.with(mContext).load(event.getImageUrl()).resizeDimen(500, 100).skipMemoryCache().centerCrop().into(viewHolder.mImage);
+        }
     }
 
     @Override
