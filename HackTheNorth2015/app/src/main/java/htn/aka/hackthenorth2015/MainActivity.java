@@ -2,15 +2,29 @@ package htn.aka.hackthenorth2015;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
+    private EventsAdapter mEventsAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //TODO: grab data from server
+
+        //the following should be done after data is set
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.events_list_recyclerview);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        //Initialize and set the adapter
+        mEventsAdapter = new EventsAdapter(this, new List<Event>());
+        recyclerView.setAdapter(mEventsAdapter);
     }
 
     @Override
