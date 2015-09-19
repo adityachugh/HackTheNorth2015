@@ -32,7 +32,7 @@ public class Event {
     }
 
     private String getSubtitleOfEvent(Date start, Date end) {
-        //TODO: formatstrings
+        //TODO: format strings
         return start.getHours()+" to "+end.getHours();
     }
 

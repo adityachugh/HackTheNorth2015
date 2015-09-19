@@ -6,6 +6,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.TranslateAnimation;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -36,6 +38,12 @@ public class MainActivity extends AppCompatActivity {
         //Initialize and set the adapter
         mEventsAdapter = new EventsAdapter(this, events);
         recyclerView.setAdapter(mEventsAdapter);
+
+        //animation!
+        TranslateAnimation trans = new TranslateAnimation(0, 0, 1000, 0);
+        trans.setDuration(500);
+        trans.setInterpolator(new DecelerateInterpolator(1.0f));
+        recyclerView.startAnimation(trans);
     }
 
     @Override
@@ -53,9 +61,9 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
 
         return super.onOptionsItemSelected(item);
     }
