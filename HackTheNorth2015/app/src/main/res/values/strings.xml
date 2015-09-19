@@ -3,8 +3,12 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+<<<<<<< HEAD
     <string name="title_activity_view_event">ViewEventActivity</string>
 
+=======
+    <string name="title_activity_new_event">NewEventActivity</string>
+>>>>>>> new-event-real
     <string name="event_title">Name</string>
     <string name="event_title_hint">Hack The North</string>
     <string name="event_location">Location</string>
@@ -18,4 +22,12 @@
     <string name="image">Image</string>
     <string name="image_selected">No Image</string>
     <string name="title_activity_search_location">SearchLocationActivity</string>
+<<<<<<< HEAD
+=======
+    <string name="title_activity_view_event">ViewEventActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="facebook_app_id">1008021132576707</string>
+    <string name="login_facebook">Login with Facebook</string>
+
+>>>>>>> new-event-real
 </resources>

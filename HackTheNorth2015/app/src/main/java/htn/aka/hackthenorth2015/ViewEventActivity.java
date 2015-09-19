@@ -9,11 +9,15 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+<<<<<<< HEAD
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.squareup.picasso.Picasso;
+=======
+import android.widget.ImageView;
+>>>>>>> new-event-real
 
 import java.util.Date;
 
@@ -32,11 +36,14 @@ public class ViewEventActivity extends AppCompatActivity {
             Log.wtf("Event passed", event.getTitle());
         }
 
+<<<<<<< HEAD
         ImageView image = (ImageView)findViewById(R.id.view_event_image);
         if (event.getImageUrl() != null && !event.getImageUrl().equals("")){
             Picasso.with(this).load(event.getImageUrl()).centerCrop().skipMemoryCache().resize(500, 400).into(image);
         }
 
+=======
+>>>>>>> new-event-real
         //TODO: populate data from event passed in
 
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
@@ -49,6 +56,7 @@ public class ViewEventActivity extends AppCompatActivity {
         collapsingToolbar.setTitle(event.getLocation());
         ImageView header = (ImageView) findViewById(R.id.image);
 
+<<<<<<< HEAD
         setupClickableOptions();
 
     }
@@ -99,6 +107,8 @@ public class ViewEventActivity extends AppCompatActivity {
         });
 
 
+=======
+>>>>>>> new-event-real
     }
 
     @Override
@@ -120,4 +130,8 @@ public class ViewEventActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> new-event-real

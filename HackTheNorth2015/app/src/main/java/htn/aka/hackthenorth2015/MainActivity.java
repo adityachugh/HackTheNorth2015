@@ -6,18 +6,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+<<<<<<< HEAD
 import android.util.Log;
+=======
+>>>>>>> new-event-real
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.TranslateAnimation;
+<<<<<<< HEAD
 import android.widget.ProgressBar;
 
 import com.parse.FunctionCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseObject;
+=======
+>>>>>>> new-event-real
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -26,11 +32,15 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private EventsAdapter mEventsAdapter;
+<<<<<<< HEAD
     private View mView;
+=======
+>>>>>>> new-event-real
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+<<<<<<< HEAD
         mView = getLayoutInflater().inflate(R.layout.activity_main, null);
         setContentView(mView);
 
@@ -95,6 +105,32 @@ public class MainActivity extends AppCompatActivity {
                 //TODO: add event to event list!
             }
         }
+=======
+        setContentView(R.layout.activity_main);
+
+        //TODO: grab data from server
+        //below is fake data
+        List<Event> events = new ArrayList<>();
+        events.add(new Event("Test 1", "Oct. 9th - Nov. 10th", new Date(), new Date(), ""));
+        events.add(new Event("Test 2", "Oct. 9th - Nov. 10th", new Date(), new Date(), ""));
+        events.add(new Event("Test 3", "Oct. 9th - Nov. 10th", new Date(), new Date(), ""));
+        events.add(new Event("Test 4", "Oct. 9th - Nov. 10th", new Date(), new Date(), ""));
+        events.add(new Event("Test 5", "Oct. 9th - Nov. 10th", new Date(), new Date(), ""));
+
+        //the following should be done after data is set
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.events_list_recyclerview);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        //Initialize and set the adapter
+        mEventsAdapter = new EventsAdapter(this, events);
+        recyclerView.setAdapter(mEventsAdapter);
+
+        //animation!
+        TranslateAnimation trans = new TranslateAnimation(0, 0, 1000, 0);
+        trans.setDuration(500);
+        trans.setInterpolator(new DecelerateInterpolator(1.0f));
+        recyclerView.startAnimation(trans);
+>>>>>>> new-event-real
     }
 
     @Override
