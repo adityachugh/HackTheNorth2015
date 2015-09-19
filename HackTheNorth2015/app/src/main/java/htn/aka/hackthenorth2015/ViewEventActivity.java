@@ -1,9 +1,14 @@
 package htn.aka.hackthenorth2015;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 import java.util.Date;
 
@@ -22,6 +27,14 @@ public class ViewEventActivity extends AppCompatActivity {
         }
 
         //TODO: populate data from event passed in
+
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        collapsingToolbar.setTitle(event.getTitle());
+        ImageView header = (ImageView) findViewById(R.id.image);
+
     }
 
     @Override
