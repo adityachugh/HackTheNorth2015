@@ -6,24 +6,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-<<<<<<< HEAD
 import android.util.Log;
-=======
->>>>>>> new-event-real
+
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.TranslateAnimation;
-<<<<<<< HEAD
 import android.widget.ProgressBar;
 
 import com.parse.FunctionCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseObject;
-=======
->>>>>>> new-event-real
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -32,21 +27,13 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private EventsAdapter mEventsAdapter;
-<<<<<<< HEAD
     private View mView;
-=======
->>>>>>> new-event-real
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-<<<<<<< HEAD
         mView = getLayoutInflater().inflate(R.layout.activity_main, null);
         setContentView(mView);
-
-        Parse.enableLocalDatastore(this);
-        Parse.initialize(this, "rTri7QJ6iN2uiL45LdS2im9ox2kMY1BJRBBRET8x", "t1vVIFA4WwsjxBLYje3ldEFtCluCDKkfdLH1ojPO");
-        Log.wtf("Parse", "initialized");
 
         ProgressBar loading = (ProgressBar)findViewById(R.id.events_list_progressbar);
         //grab data from server
@@ -105,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
                 //TODO: add event to event list!
             }
         }
-=======
         setContentView(R.layout.activity_main);
 
         //TODO: grab data from server
@@ -130,7 +116,6 @@ public class MainActivity extends AppCompatActivity {
         trans.setDuration(500);
         trans.setInterpolator(new DecelerateInterpolator(1.0f));
         recyclerView.startAnimation(trans);
->>>>>>> new-event-real
     }
 
     @Override
