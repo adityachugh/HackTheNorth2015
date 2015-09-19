@@ -124,7 +124,7 @@ public class NewEventActivity extends AppCompatActivity {
                 String title = mNameView.getText().toString();
 
 
-                
+
             }
         });
     }

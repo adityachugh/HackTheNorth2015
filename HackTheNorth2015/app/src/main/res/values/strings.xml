@@ -18,5 +18,7 @@
     <string name="image_selected">No Image</string>
     <string name="title_activity_search_location">SearchLocationActivity</string>
     <string name="title_activity_view_event">ViewEventActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="facebook_app_id">1008021132576707</string>
 
 </resources>
