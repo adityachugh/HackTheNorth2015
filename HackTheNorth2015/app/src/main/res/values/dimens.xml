@@ -5,8 +5,5 @@
     <dimen name="main_text_size">16sp</dimen>
     <dimen name="small_text_size">12sp</dimen>
     <dimen name="event_list_item_height">70dp</dimen>
-<<<<<<< HEAD
     <dimen name="fab_size">48dp</dimen>
-=======
->>>>>>> new-event-real
 </resources>

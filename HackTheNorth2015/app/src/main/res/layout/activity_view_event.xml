@@ -34,11 +34,7 @@
                     app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
                     <ImageView
-<<<<<<< HEAD
                         android:id="@+id/view_event_image"
-=======
-                        android:id="@+id/image"
->>>>>>> new-event-real
                         android:layout_width="match_parent"
                         android:layout_height="192dp"
                         android:fitsSystemWindows="true"
@@ -62,15 +58,11 @@
                 android:layout_height="match_parent">
 
                 <LinearLayout
-<<<<<<< HEAD
                     android:layout_marginTop="8dp"
-=======
->>>>>>> new-event-real
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-<<<<<<< HEAD
                     <!-- TODO: google maps view here possible-->
 
                     <View
@@ -172,18 +164,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="@color/view_splitting_lines"/>
-=======
-
->>>>>>> new-event-real
-
                 </LinearLayout>
             </ScrollView>
         </LinearLayout>
 
     </android.support.design.widget.CoordinatorLayout>
 
-<<<<<<< HEAD
 </RelativeLayout>
-=======
-</RelativeLayout>
->>>>>>> new-event-real
+

@@ -10,7 +10,6 @@ import java.util.Date;
  * Created by rohitsharma on 2015-09-19.
 =======
  * Created by Kenny on 2015-09-19.
->>>>>>> new-event-real
  */
 public class Event implements Serializable {
     private String mTitle;
@@ -64,8 +63,5 @@ public class Event implements Serializable {
     public String getLocation() {
         return "Fake Location";
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> new-event-real
 }
