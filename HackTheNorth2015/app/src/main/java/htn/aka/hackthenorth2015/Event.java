@@ -23,6 +23,14 @@ public class Event {
         mSubtitle = getSubtitleOfEvent(mStartDate, mEndDate);
     }
 
+    public Event(String title, String subtitle, Date start, Date end, String imageUrl){
+        mTitle = title;
+        mSubtitle = subtitle;
+        mStartDate = start;
+        mEndDate = end;
+        mImageUrl = imageUrl;
+    }
+
     private String getSubtitleOfEvent(Date start, Date end) {
         //TODO: formatstrings
         return start.getHours()+" to "+end.getHours();

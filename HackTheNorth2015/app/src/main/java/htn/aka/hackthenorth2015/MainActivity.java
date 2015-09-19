@@ -7,6 +7,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     private EventsAdapter mEventsAdapter;
@@ -18,13 +22,19 @@ public class MainActivity extends AppCompatActivity {
 
         //TODO: grab data from server
         //below is fake data
+        List<Event> events = new ArrayList<>();
+        events.add(new Event("Test 1", "Oct. 9th - Nov. 10th", new Date(), new Date(), ""));
+        events.add(new Event("Test 2", "Oct. 9th - Nov. 10th", new Date(), new Date(), "https://s3.amazonaws.com/storage.production.ticketacular.me/wallpaper/background/12633University-Waterloo-Engineering-5-2.jpg"));
+        events.add(new Event("Test 3", "Oct. 9th - Nov. 10th", new Date(), new Date(), ""));
+        events.add(new Event("Test 4", "Oct. 9th - Nov. 10th", new Date(), new Date(), ""));
+        events.add(new Event("Test 5", "Oct. 9th - Nov. 10th", new Date(), new Date(), ""));
 
         //the following should be done after data is set
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.events_list_recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         //Initialize and set the adapter
-        mEventsAdapter = new EventsAdapter(this, new List<Event>());
+        mEventsAdapter = new EventsAdapter(this, events);
         recyclerView.setAdapter(mEventsAdapter);
     }
 
