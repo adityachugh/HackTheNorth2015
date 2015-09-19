@@ -1,9 +1,13 @@
 package htn.aka.hackthenorth2015;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class NewEventActivity extends AppCompatActivity {
 
@@ -11,6 +15,23 @@ public class NewEventActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_event);
+        
+        EditText nameView = (EditText)findViewById(R.id.event_name);
+        TextView locationView = (TextView)findViewById(R.id.event_location);
+        TextView startDateView = (TextView)findViewById(R.id.start_date);
+        TextView endDateView = (TextView)findViewById(R.id.end_date);
+        TextView inviteGuestsView = (TextView)findViewById(R.id.invite_guests);
+        TextView addImageView = (TextView)findViewById(R.id.add_image);
+        FloatingActionButton confirmFAB = (FloatingActionButton)findViewById(R.id.confirm_fab);
+
+        String title = nameView.getText().toString();
+
+        locationView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     @Override
