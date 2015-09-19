@@ -6,6 +6,7 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
@@ -22,17 +23,21 @@ public class ViewEventActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_event);
 
         Event event = new Event("", "", new Date(), new Date(), "");
-        if (getIntent().getExtras() != null){
-            event = (Event)getIntent().getExtras().getSerializable(EXTRA_EVENT);
+        if (getIntent().getSerializableExtra(EXTRA_EVENT) != null){
+            event = (Event)getIntent().getSerializableExtra(EXTRA_EVENT);
+            Log.wtf("Event passed", event.getTitle());
         }
 
         //TODO: populate data from event passed in
 
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(event.getTitle());
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
-        collapsingToolbar.setTitle(event.getTitle());
+        collapsingToolbar.setTitle(event.getLocation());
         ImageView header = (ImageView) findViewById(R.id.image);
 
     }
@@ -51,10 +56,8 @@ public class ViewEventActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        if (id == android.R.id.home)
+            this.onBackPressed();
 
         return super.onOptionsItemSelected(item);
     }

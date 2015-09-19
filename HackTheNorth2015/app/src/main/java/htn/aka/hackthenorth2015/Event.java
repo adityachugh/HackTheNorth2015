@@ -56,4 +56,8 @@ public class Event implements Serializable {
     public Date getEndDate() {
         return mEndDate;
     }
+
+    public String getLocation() {
+        return "Fake Location";
+    }
 }
