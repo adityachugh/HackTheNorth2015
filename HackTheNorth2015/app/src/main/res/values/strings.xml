@@ -20,5 +20,6 @@
     <string name="title_activity_view_event">ViewEventActivity</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="facebook_app_id">1008021132576707</string>
+    <string name="login_facebook">Login with Facebook</string>
 
 </resources>

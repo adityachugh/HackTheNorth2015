@@ -72,7 +72,10 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
         Event event = mEvents.get(i);
         viewHolder.mTitle.setText(event.getTitle());
         viewHolder.mSubtitle.setText(event.getSubtitle());
-        Picasso.with(mContext).load(event.getImageUrl()).centerCrop().resizeDimen(500, 100).skipMemoryCache().into(viewHolder.mImage);
+        if (event.getImageUrl() != null && !event.getImageUrl().equals("")){
+            Picasso.with(mContext).load(event.getImageUrl()).centerCrop().skipMemoryCache().into(viewHolder.mImage);
+
+        }
 
     }
 
