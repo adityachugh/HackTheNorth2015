@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/event_list_item_height">
+    android:layout_height="@dimen/event_list_item_height"
+    android:id="@+id/event_list_item_overall_click">
     <ImageView
         android:id="@+id/event_image"
         android:layout_width="match_parent"

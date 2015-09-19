@@ -2,12 +2,13 @@ package htn.aka.hackthenorth2015;
 
 import com.parse.ParseObject;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by rohitsharma on 2015-09-19.
  */
-public class Event {
+public class Event implements Serializable {
     private String mTitle;
     private String mSubtitle;
     private String mImageUrl;
