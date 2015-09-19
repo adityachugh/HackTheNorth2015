@@ -70,6 +70,10 @@
                         android:layout_height="1dp"
                         android:background="@color/view_splitting_lines"/>
                     <LinearLayout
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
                         android:id="@+id/event_availability"
                         android:background="@android:color/white"
                         android:layout_width="match_parent"
@@ -84,6 +88,10 @@
                         android:layout_height="1dp"
                         android:background="@color/view_splitting_lines"/>
                     <LinearLayout
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
                         android:id="@+id/event_guests"
                         android:background="@android:color/white"
                         android:layout_width="match_parent"
@@ -98,6 +106,10 @@
                         android:layout_height="1dp"
                         android:background="@color/view_splitting_lines"/>
                     <LinearLayout
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
                         android:id="@+id/event_chat"
                         android:background="@android:color/white"
                         android:layout_width="match_parent"
@@ -112,6 +124,10 @@
                         android:layout_height="1dp"
                         android:background="@color/view_splitting_lines"/>
                     <LinearLayout
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
                         android:id="@+id/event_user"
                         android:background="@android:color/white"
                         android:layout_width="match_parent"
@@ -131,6 +147,10 @@
                         android:layout_height="1dp"
                         android:background="@color/view_splitting_lines"/>
                     <LinearLayout
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
                         android:id="@+id/event_leave"
                         android:background="@android:color/white"
                         android:layout_width="match_parent"
