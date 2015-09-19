@@ -8,10 +8,20 @@
         android:id="@+id/events_list_recyclerview"
         />
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/add_new_event_fab"
+        android:layout_width="@dimen/fab_size_normal"
+        android:layout_height="@dimen/fab_size_normal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_add_event"/>
+
     <ProgressBar
         android:id="@+id/events_list_progressbar"
         android:layout_width="@dimen/abc_action_bar_progress_bar_size"
         android:layout_height="@dimen/abc_action_bar_progress_bar_size"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true" />
 
 </RelativeLayout>

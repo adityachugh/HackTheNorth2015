@@ -1,5 +1,6 @@
 package htn.aka.hackthenorth2015;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -55,6 +56,14 @@ public class MainActivity extends AppCompatActivity {
                     trans.setDuration(500);
                     trans.setInterpolator(new DecelerateInterpolator(1.0f));
                     recyclerView.startAnimation(trans);
+
+                    FloatingActionButton newEventFab = (FloatingActionButton)findViewById(R.id.add_new_event_fab);
+                    newEventFab.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            //TODO: move to new event activity
+                        }
+                    });
 
                 }
             }
