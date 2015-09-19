@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.view.animation.TranslateAnimation;
 import android.widget.ProgressBar;
 
 import com.parse.FunctionCallback;
+import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 
@@ -30,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mView = getLayoutInflater().inflate(R.layout.activity_main, null);
         setContentView(mView);
+
+        Parse.enableLocalDatastore(this);
+        Parse.initialize(this, "rTri7QJ6iN2uiL45LdS2im9ox2kMY1BJRBBRET8x", "t1vVIFA4WwsjxBLYje3ldEFtCluCDKkfdLH1ojPO");
+        Log.wtf("Parse", "initialized");
 
         ProgressBar loading = (ProgressBar)findViewById(R.id.events_list_progressbar);
         //grab data from server

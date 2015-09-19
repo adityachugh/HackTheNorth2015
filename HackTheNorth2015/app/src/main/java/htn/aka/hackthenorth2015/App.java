@@ -16,9 +16,6 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         // Enable Local Datastore.
-        Parse.enableLocalDatastore(this);
-        Parse.initialize(this, "rTri7QJ6iN2uiL45LdS2im9ox2kMY1BJRBBRET8x", "t1vVIFA4WwsjxBLYje3ldEFtCluCDKkfdLH1ojPO");
-        Log.wtf("Parse", "initialized");
     }
 
     public static boolean hasNetworkConnection(Context context) {
