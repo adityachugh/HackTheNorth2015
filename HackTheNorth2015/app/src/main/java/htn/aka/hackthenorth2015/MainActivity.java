@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //TODO: grab data from server
+        //below is fake data
 
         //the following should be done after data is set
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.events_list_recyclerview);
