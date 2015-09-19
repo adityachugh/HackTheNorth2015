@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.Date;
 
 public class ViewEventActivity extends AppCompatActivity {
@@ -28,6 +30,11 @@ public class ViewEventActivity extends AppCompatActivity {
         if (getIntent().getSerializableExtra(EXTRA_EVENT) != null){
             event = (Event)getIntent().getSerializableExtra(EXTRA_EVENT);
             Log.wtf("Event passed", event.getTitle());
+        }
+
+        ImageView image = (ImageView)findViewById(R.id.view_event_image);
+        if (event.getImageUrl() != null && !event.getImageUrl().equals("")){
+            Picasso.with(this).load(event.getImageUrl()).centerCrop().skipMemoryCache().resize(500, 400).into(image);
         }
 
         //TODO: populate data from event passed in
