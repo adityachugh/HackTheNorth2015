@@ -51,7 +51,8 @@ public class Event implements Serializable {
         if (mImageUrl != null){
             Log.d("the d", mImageUrl);
         }
-        mStartDate = event.get
+        mStartDate = (Date)event.get("startDate");
+        mEndDate = (Date)event.get("endDate");
     }
 
     public Event(String title, String subtitle, Date start, Date end, String imageUrl){

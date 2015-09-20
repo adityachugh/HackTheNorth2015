@@ -21,6 +21,7 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -52,7 +53,11 @@ public class MainActivity extends AppCompatActivity {
 
                     for (int i = 0; i < guestsList.length() ; i++){
                         //guests -> events -> Events (java)
-                        events.add(new Event(guestsList.getJSONObject(i)));
+                        try {
+                            events.add(new Event(guestsList.getJSONObject(i)));
+                        } catch (JSONException e1) {
+                            e1.printStackTrace();
+                        }
                     }
 
                     //the following should be done after data is set
