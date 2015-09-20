@@ -20,6 +20,9 @@ import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -37,14 +40,19 @@ public class MainActivity extends AppCompatActivity {
 
         ProgressBar loading = (ProgressBar)findViewById(R.id.events_list_progressbar);
         //grab data from server
-        CloudFunctions.getEventsForUser(loading, this, mView, new FunctionCallback<List<ParseObject>>() {
+        CloudFunctions.getEventsForUser(loading, this, mView, new FunctionCallback<JSONArray>() {
             @Override
-            public void done(List<ParseObject> guestsList, ParseException e) {
+            public void done(JSONArray guestsList, ParseException e) {
                 if (e == null){
                     List<Event> events = new ArrayList<Event>();
-                    for (ParseObject guest : guestsList){
+//                    for (JSONObject guest : guestsList){
+//                        //guests -> events -> Events (java)
+//                        events.add(new Event(guest.getJSONObject(EventDateSource.GUESTS_EVENT_FIELD_TITLE)));
+//                    }
+
+                    for (int i = 0; i < guestsList.length() ; i++){
                         //guests -> events -> Events (java)
-                        events.add(new Event(guest.getParseObject(EventDateSource.GUESTS_EVENT_FIELD_TITLE)));
+                        events.add(new Event(guestsList.getJSONObject(i)));
                     }
 
                     //the following should be done after data is set
