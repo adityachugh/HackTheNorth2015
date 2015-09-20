@@ -24,7 +24,7 @@ import java.util.Objects;
  */
 public class CloudFunctions {
 
-    public static void getEventsForUser (final ProgressBar loading, Context context, final View view, final FunctionCallback<JSONArray> callback) {
+    public static void getEventsForUser (final ProgressBar loading, Context context, final View view, final FunctionCallback<List<JSONObject>> callback) {
         loading.setVisibility(View.VISIBLE);
         if (!App.hasNetworkConnection(context)){
             loading.setVisibility(View.GONE);
@@ -33,16 +33,16 @@ public class CloudFunctions {
 
         HashMap<String, Object> params = new HashMap<>();
 
-        ParseCloud.callFunctionInBackground("test", params, new FunctionCallback<JSONArray>() {
+        ParseCloud.callFunctionInBackground("test", params, new FunctionCallback<HashMap<String, Object>>() {
             @Override
-            public void done(JSONArray parseObjects, ParseException e) {
+            public void done(HashMap<String, Object> parseObjects, ParseException e) {
                 if (e != null) {
                     e.printStackTrace();
                 } else {
 //                    int i = 0;
-                    for (int i = 0; i < parseObjects.length(); i++) {
+                    for (int i = 0; i < parseObjects.size(); i++) {
                         try {
-                            JSONObject jsonObject = parseObjects.getJSONObject(i);
+                            JSONObject jsonObject = (JSONObject)parseObjects.get(i+"");
                             String facebookId = jsonObject.getString("facebookId");
                             Log.d("CloudFunctions", facebookId);
                         } catch (JSONException e1) {
@@ -52,19 +52,5 @@ public class CloudFunctions {
                 }
             }
         });
-
-//        ParseCloud.callFunctionInBackground("test", params, new FunctionCallback<List<ParseObject>>() {
-//            @Override
-//            public void done(List<ParseObject> parseObjectList, ParseException e) {
-//                int i = 0;
-//                loading.setVisibility(View.GONE);
-//                if (e!= null) {
-//                    Snackbar.make(view, e.getMessage(), Snackbar.LENGTH_SHORT).show();
-//                }
-////                callback.done(parseObjectList, e);
-//
-//                if (e!=null) e.printStackTrace(System.out);
-//            }
-//        });
     }
 }

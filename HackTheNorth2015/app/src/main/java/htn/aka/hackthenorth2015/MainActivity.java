@@ -46,10 +46,6 @@ public class MainActivity extends AppCompatActivity {
             public void done(JSONArray guestsList, ParseException e) {
                 if (e == null){
                     List<Event> events = new ArrayList<Event>();
-//                    for (JSONObject guest : guestsList){
-//                        //guests -> events -> Events (java)
-//                        events.add(new Event(guest.getJSONObject(EventDateSource.GUESTS_EVENT_FIELD_TITLE)));
-//                    }
 
                     for (int i = 0; i < guestsList.length() ; i++){
                         //guests -> events -> Events (java)
@@ -83,19 +79,9 @@ public class MainActivity extends AppCompatActivity {
                             startActivityForResult(i, NewEventActivity.NEW_EVENT_CODE);
                         }
                     });
-
                 }
             }
         });
-
-//        //below is fake data
-//        List<Event> events = new ArrayList<>();
-//        events.add(new Event("Test 1", "Oct. 9th - Nov. 10th", new Date(), new Date(), ""));
-//        events.add(new Event("Test 2", "Oct. 9th - Nov. 10th", new Date(), new Date(), ""));
-//        events.add(new Event("Test 3", "Oct. 9th - Nov. 10th", new Date(), new Date(), ""));
-//        events.add(new Event("Test 4", "Oct. 9th - Nov. 10th", new Date(), new Date(), ""));
-//        events.add(new Event("Test 5", "Oct. 9th - Nov. 10th", new Date(), new Date(), ""));
-
     }
 
     @Override
@@ -105,30 +91,6 @@ public class MainActivity extends AppCompatActivity {
                 //TODO: add event to event list!
             }
         }
-        setContentView(R.layout.activity_main);
-
-        //TODO: grab data from server
-        //below is fake data
-        List<Event> events = new ArrayList<>();
-        events.add(new Event("Test 1", "Oct. 9th - Nov. 10th", new Date(), new Date(), ""));
-        events.add(new Event("Test 2", "Oct. 9th - Nov. 10th", new Date(), new Date(), ""));
-        events.add(new Event("Test 3", "Oct. 9th - Nov. 10th", new Date(), new Date(), ""));
-        events.add(new Event("Test 4", "Oct. 9th - Nov. 10th", new Date(), new Date(), ""));
-        events.add(new Event("Test 5", "Oct. 9th - Nov. 10th", new Date(), new Date(), ""));
-
-        //the following should be done after data is set
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.events_list_recyclerview);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        //Initialize and set the adapter
-        mEventsAdapter = new EventsAdapter(this, events);
-        recyclerView.setAdapter(mEventsAdapter);
-
-        //animation!
-        TranslateAnimation trans = new TranslateAnimation(0, 0, 1000, 0);
-        trans.setDuration(500);
-        trans.setInterpolator(new DecelerateInterpolator(1.0f));
-        recyclerView.startAnimation(trans);
     }
 
     @Override
